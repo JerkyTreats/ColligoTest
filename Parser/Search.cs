@@ -17,7 +17,7 @@ namespace Colligo.REST
 		static string _sortDirection = "sort_direction";
 		static string _pageSize = "page_size";
 		static string _pageNumber = "page_number";
-		static string _imageSizes = "_imageSizes";
+		static string _imageSizes = "image_sizes";
 		static string _languages = "languages";
 		static string _mature = "mature";
 		static string _include = "include";
@@ -201,6 +201,24 @@ namespace Colligo.REST
 		public static string GetChangeMultiDayStart()
 		{
 			return _changeMultiDayStart;
+		}
+
+		/// <summary>
+		/// Forms the comma delimited query parameter specifying the image sizes to return with the call
+		/// </summary>
+		/// <param name="sizes"></param>
+		/// <returns></returns>
+		public static string GetImage(params Image.Types[] sizes)
+		{
+			if (sizes == null)
+				return null;
+
+			string value = Image.Sizes[sizes[0]];
+			for (int i = 1; i < sizes.Length; i++)
+			{
+				value += "," + Image.Sizes[sizes[i]];
+			}
+			return GetQueryElement(_imageSizes, value);
 		}
 
 		//Common function to check the values of the query

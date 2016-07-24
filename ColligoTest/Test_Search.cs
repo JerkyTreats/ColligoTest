@@ -253,5 +253,27 @@ namespace ColligoTest
 		{
 			Assert.AreEqual("change_multi_day_start",Search.GetChangeMultiDayStart());
 		}
+
+		[Test]
+		public void Search_GetImageWithSingleValueReturnsValidString()
+		{
+			string expected = "image_sizes=small";
+			string actual = Search.GetImage(Image.Types.Small);
+			Assert.AreEqual(expected, actual);
+		}
+
+		[Test]
+		public void Search_GetImageWithMulitpleValueReturnsValidString()
+		{
+			string expected = "image_sizes=small,medium,large";
+			string actual = Search.GetImage(Image.Types.Small, Image.Types.Medium, Image.Types.Large);
+			Assert.AreEqual(expected, actual);
+		}
+
+		[Test]
+		public void Search_GetIMageWithNullValueReturnsNullString()
+		{
+			Assert.IsNull(Search.GetImage(null));
+		}
 	}
 }
