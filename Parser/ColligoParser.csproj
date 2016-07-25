@@ -41,14 +41,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
-    <Compile Include="Get.cs" />
+    <Compile Include="Query\Query Parameters\ChangeMultiDayStart.cs" />
+    <Compile Include="Query\Query Parameters\PageNumber.cs" />
+    <Compile Include="Query\Query Parameters\Category.cs" />
+    <Compile Include="Query\Query Parameters\CountOnly.cs" />
+    <Compile Include="Query\Query Parameters\ExCategory.cs" />
+    <Compile Include="Query\Query Parameters\PageSize.cs" />
+    <Compile Include="Query\Get.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Query Parameters\Image.cs" />
-    <Compile Include="Query Parameters\Include.cs" />
-    <Compile Include="Query Parameters\Mature.cs" />
-    <Compile Include="Query Parameters\Sort.cs" />
-    <Compile Include="Search.cs" />
+    <Compile Include="Query\Query Parameters\Image.cs" />
+    <Compile Include="Query\Query Parameters\Include.cs" />
+    <Compile Include="Query\Query Parameters\IQueryParameter.cs" />
+    <Compile Include="Query\Query Parameters\Mature.cs" />
+    <Compile Include="Query\Query Parameters\QueryParameterBase.cs" />
+    <Compile Include="Query\Query Parameters\SortOrder.cs" />
+    <Compile Include="Query\Query Parameters\SortDirection.cs" />
+    <Compile Include="Query\Query Parameters\Within.cs" />
+    <Compile Include="Query\QueryTools.cs" />
+    <Compile Include="Query\Search.cs" />
+    <Compile Include="Query\Query Parameters\Units.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

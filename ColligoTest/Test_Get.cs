@@ -20,13 +20,5 @@ namespace ColligoTest
 			string validString = Get.GetId(appender);
 			Assert.AreEqual("id=" + appender, validString);
 		}
-
-		[Test]
-		public void Get_GetIdWithWhitespaceParametersAutomaticallyRemoved()
-		{
-			string whitespace = "   Bad Input   ";
-			string formedId = Get.GetId(whitespace);
-			Assert.AreEqual("id=BadInput", formedId);
-		}
 	}
 }

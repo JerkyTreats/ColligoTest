@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Net;
 
 namespace Colligo.REST
 {
 	public class Parser
 	{
-		static string BASE = string.Format("{0}?app_key={1}", Data.URL, Data.Key);
-
 		WebClient _webClient;
 
 		/// <summary>
@@ -33,7 +26,7 @@ namespace Colligo.REST
 		/// <returns></returns>
 		public string FormUrl(params string[] options)
 		{
-			string formed = BASE;
+			string formed = Data.QueryBase;
 
 			foreach(string option in options)
 			{

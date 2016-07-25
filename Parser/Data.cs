@@ -10,14 +10,7 @@ namespace Colligo.REST
 	{
 		static string _url = "http://api.eventful.com/rest/events/search";
 		static string _key = "2SZRKGrNmCMGT6PS";
-		ValidCall _calls;
 
-		public Data()
-		{
-			_calls = new ValidCall();
-		}
-		
-	
 		/// <summary>
 		/// API key for Eventful. ***POTENTIALLY INSECURE***
 		/// </summary>
@@ -28,13 +21,9 @@ namespace Colligo.REST
 		/// </summary>
 		public static string URL { get { return _url; } }
 
-		public ValidCall Calls { get { return _calls; } }
+		public static string QueryBase { get { return string.Format("{0}?{1}", URL, Key); } }
 
 	}
 
-	public class ValidCall
-	{
-		public string Get { get { return "get"; } }
-		public string Search { get { return "search"; } }
-	}
+
 }
