@@ -38,7 +38,7 @@ namespace ColligoTest
 			string expected = "sort_order=popularity";
 			so.SetValue(SortOrder.Types.Popularity);
 
-			string formedString = so.GetQuery();
+			string formedString = so.GetQueryParameter();
 
 			Assert.AreEqual(expected, formedString);
 		}
@@ -49,7 +49,7 @@ namespace ColligoTest
 			string expected = "sort_order=date";
 			so.SetValue(SortOrder.Types.Date);
 
-			string formedString = so.GetQuery();
+			string formedString = so.GetQueryParameter();
 
 			Assert.AreEqual(expected, formedString);
 		}
@@ -59,7 +59,7 @@ namespace ColligoTest
 		{
 			string expected = "sort_order=relevance";
 			so.SetValue(SortOrder.Types.Relevance);
-			string formedString = so.GetQuery();
+			string formedString = so.GetQueryParameter();
 			Assert.AreEqual(expected, formedString);
 		}
 	}

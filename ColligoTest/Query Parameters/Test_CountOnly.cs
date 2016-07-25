@@ -20,14 +20,14 @@ namespace ColligoTest
 			string expected = "count_only";
 			count.AddValue(true);
 
-			string formedString = count.GetQuery();
+			string formedString = count.GetQueryParameter();
 			Assert.AreEqual(expected, formedString);
 		}
 
 		[Test]
 		public void CountOnly_DefaultReturnsNullString()
 		{
-			Assert.IsNull(count.GetQuery());
+			Assert.IsNull(count.GetQueryParameter());
 		}
 
 	}

@@ -16,9 +16,9 @@ namespace Colligo.REST
 			_value = value;
 		}
 
-		public virtual string GetQuery()
+		public virtual string GetQueryParameter()
 		{
-			return QueryTools.GetQuery(_key, _value);
+			return QueryTools.GetQueryParameter(_key, _value);
 		}
 	}
 }

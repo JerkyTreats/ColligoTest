@@ -6,19 +6,31 @@ namespace ColligoTest
 	[TestFixture]
 	public class Test_Get
 	{
-		[Test]
-		public void Get_GetIdWithEmptyParameterReturnsNull()
+		Get get;
+
+		[SetUp]
+		public void SetUp()
 		{
-			string nullString = Get.GetId(null);
-			Assert.IsNull(nullString);
+			get = new Get();
 		}
 
 		[Test]
-		public void Get_GetIdWithValidParametersReturnsExpectedResult()
+		public void Get_GetQueryWithNoSetOptionsReturnsBaseQueryString()
 		{
-			string appender = "test,wow";
-			string validString = Get.GetId(appender);
-			Assert.AreEqual("id=" + appender, validString);
+			string expected = Data.QueryBase;
+			string actual = get.GetQuery();
+			Assert.AreEqual(expected, actual);
+		}
+
+		[Test]
+		public void Get_GetQueryWithMulitpleValuesSetReturnsCorrectString()
+		{
+			string expected = Data.QueryBase + "&id=E0-001-000278174-6&image_sizes=small,thumb";
+			get.Id.AddValue("E0-001-000278174-6");
+			get.Image.AddValues(Image.Types.Small, Image.Types.Thumb);
+
+			string actual = get.GetQuery();
+			Assert.AreEqual(expected, actual);
 		}
 	}
 }

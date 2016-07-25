@@ -19,21 +19,21 @@ namespace ColligoTest
 		{
 			string expected = "page_number=25";
 			page.AddValue(25);
-			string formedString = page.GetQuery();
+			string formedString = page.GetQueryParameter();
 			Assert.AreEqual(expected, formedString);
 		}
 
 		[Test]
 		public void PageNumber_NullValueReturnsNullString()
 		{
-			Assert.IsNull(page.GetQuery());
+			Assert.IsNull(page.GetQueryParameter());
 		}
 
 		[Test]
 		public void PageNumber_ZeroValueIgnored()
 		{
 			page.AddValue(0);
-			Assert.IsNull(page.GetQuery());
+			Assert.IsNull(page.GetQueryParameter());
 		}
 	}
 }

@@ -6,32 +6,42 @@ using System.Threading.Tasks;
 
 namespace Colligo.REST
 {
+	/// <summary>
+	/// Static tools to form queries and their parameters
+	/// </summary>
 	public static class QueryTools
 	{
 		static string _appender = "=";
 
-		//Common function to check the values of the query
-		public static string GetQuery(string key, string value)
+		/// <summary>
+		/// Returns a key=value string if value is not null
+		/// </summary>
+		/// <param name="key"></param>
+		/// <param name="value"></param>
+		/// <returns></returns>
+		public static string GetQueryParameter(string key, string value)
 		{
 			if (value == null)
 				return null;
-			return FormQuery(key, value);
-		}
-
-		public static string FormCommaSeperatedString(params string[] values)
-		{
-			string commaSeperatedValue = values[0];
-			for (int i = 1; i < values.Length; i++)
-			{
-				commaSeperatedValue += "," + values[i];
-			}
-			return commaSeperatedValue;
+			return FormQueryParameter(key, value);
 		}
 
 		//Forms the acutal query parameter string
-		public static string FormQuery(string key, string value)
+		static string FormQueryParameter(string key, string value)
 		{
 			return string.Format("{0}{1}{2}", key, _appender, value);
+		}
+
+		public static string GetQuery(List<IQueryParameter> parameters)
+		{
+			string formedString = Data.QueryBase;
+			foreach (IQueryParameter parameter in parameters)
+			{
+				string value = parameter.GetQueryParameter();
+				if (value != null)
+					formedString += "&" + value;
+			}
+			return formedString;
 		}
 	}
 }

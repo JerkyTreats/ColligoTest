@@ -56,7 +56,7 @@ namespace ColligoTest
 			string expected = "include=categories";
 			include.AddValues(Include.Types.Categories);
 
-			string formedString = include.GetQuery();
+			string formedString = include.GetQueryParameter();
 
 			Assert.AreEqual(expected, formedString);
 		}
@@ -67,7 +67,7 @@ namespace ColligoTest
 			string expected = "include=categories,subcategories";
 			include.AddValues(Include.Types.Categories, Include.Types.Subcategories);
 
-			string formedString = include.GetQuery();
+			string formedString = include.GetQueryParameter();
 
 			Assert.AreEqual(expected, formedString);
 		}
@@ -75,7 +75,7 @@ namespace ColligoTest
 		[Test]
 		public void Include_ReturnsNullForNullParameters()
 		{
-			Assert.IsNull(include.GetQuery());
+			Assert.IsNull(include.GetQueryParameter());
 		}
 	}
 }

@@ -20,7 +20,7 @@ namespace ColligoTest
 			string expected = "units=km";
 			units.AddValue(Units.Types.Kilometers);
 
-			string formedString = units.GetQuery();
+			string formedString = units.GetQueryParameter();
 
 			Assert.AreEqual(expected, formedString);
 		}
@@ -28,7 +28,7 @@ namespace ColligoTest
 		[Test]
 		public void Search_GetUnitsNullValueReturnsNull()
 		{
-			Assert.IsNull(units.GetQuery());
+			Assert.IsNull(units.GetQueryParameter());
 		}
 
 	}

@@ -19,7 +19,7 @@ namespace ColligoTest
 			string expected = "test=test";
 			basic.AddValue("test");
 
-			string formedString = basic.GetQuery();
+			string formedString = basic.GetQueryParameter();
 
 			Assert.AreEqual(expected, formedString);
 		}
@@ -27,7 +27,7 @@ namespace ColligoTest
 		[Test]
 		public void BasicQueryParameter_NullValueReturnsNull()
 		{
-			Assert.IsNull(basic.GetQuery());
+			Assert.IsNull(basic.GetQueryParameter());
 		}
 	}
 }

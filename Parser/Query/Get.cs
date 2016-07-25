@@ -1,22 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Colligo.REST
 {
-	public static class Get
+	/// <summary>
+	/// Forms the query string for the Get API Call.
+	/// </summary>
+	public class Get : IQuery
 	{
-		static string _appender = "=";
-		static string _id = "id";
-		static string _imageSizes = "image_sizes";
+		public Id Id = new Id();
+		public Image Image = new Image();
 
-		public static string GetId(string value)
+		List<IQueryParameter> QueryParameters = new List<IQueryParameter>();
+
+		public Get()
 		{
-			if (value == null)
-				return null;
-			return string.Format("{0}{1}{2}", _id, _appender, value);
+			QueryParameters.Add(Id);
+			QueryParameters.Add(Image);
+		}
+
+		public string GetQuery()
+		{
+			return QueryTools.GetQuery(QueryParameters);
 		}
 	}
 }

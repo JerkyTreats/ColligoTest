@@ -20,14 +20,14 @@ namespace ColligoTest
 			string expected = "change_multi_day_start";
 			change.AddValue(true);
 
-			string actual = change.GetQuery();
+			string actual = change.GetQueryParameter();
 			Assert.AreEqual(expected, actual);
 		}
 
 		[Test]
 		public void ChangeMultiDateStart_NullValueReturnedIfNotToBeIncluded()
 		{
-			Assert.IsNull(change.GetQuery());
+			Assert.IsNull(change.GetQueryParameter());
 		}
 
 	}

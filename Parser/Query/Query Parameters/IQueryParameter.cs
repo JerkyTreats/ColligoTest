@@ -1,8 +1,8 @@
 ﻿
 namespace Colligo.REST
 {
-	interface IQueryParameter
+	public interface IQueryParameter
 	{
-		string GetQuery();
+		string GetQueryParameter();
 	}
 }

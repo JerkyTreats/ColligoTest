@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="Query\Query Parameters\Id.cs" />
+    <Compile Include="Query\IQuery.cs" />
     <Compile Include="Query\Query Parameters\ChangeMultiDayStart.cs" />
     <Compile Include="Query\Query Parameters\PageNumber.cs" />
     <Compile Include="Query\Query Parameters\Category.cs" />
@@ -54,14 +56,13 @@
     <Compile Include="Query\Query Parameters\Include.cs" />
     <Compile Include="Query\Query Parameters\IQueryParameter.cs" />
     <Compile Include="Query\Query Parameters\Mature.cs" />
-    <Compile Include="Query\Query Parameters\QueryParameterBase.cs" />
+    <Compile Include="Query\Query Parameters\BasicQueryParameter.cs" />
     <Compile Include="Query\Query Parameters\SortOrder.cs" />
     <Compile Include="Query\Query Parameters\SortDirection.cs" />
     <Compile Include="Query\Query Parameters\Within.cs" />
     <Compile Include="Query\QueryTools.cs" />
     <Compile Include="Query\Search.cs" />
     <Compile Include="Query\Query Parameters\Units.cs" />
-    <Compile Include="Util.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

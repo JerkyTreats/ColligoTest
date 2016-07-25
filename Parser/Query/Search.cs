@@ -2,7 +2,10 @@
 
 namespace Colligo.REST
 {
-	public class Search 
+	/// <summary>
+	/// Forms the Search API call with the appropriate query parameters
+	/// </summary>
+	public class Search : IQuery
 	{
 		public BasicQueryParameter KeyWords = new BasicQueryParameter("keywords");
 		public BasicQueryParameter Language = new BasicQueryParameter("language");
@@ -47,14 +50,7 @@ namespace Colligo.REST
 
 		public string GetQuery()
 		{
-			string formedString = Data.QueryBase;
-			foreach (IQueryParameter parameter in QueryParameters)
-			{
-				string value = parameter.GetQuery();
-				if (value != null)
-					formedString += "&" + value;
-			}
-			return formedString;
+			return QueryTools.GetQuery(QueryParameters);
 		}
 	}
 }

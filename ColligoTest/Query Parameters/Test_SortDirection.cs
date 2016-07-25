@@ -29,7 +29,7 @@ namespace ColligoTest
 		[Test]
 		public void SortDirection_UnsetValueReturnsNullString()
 		{
-			Assert.IsNull(sd.GetQuery());
+			Assert.IsNull(sd.GetQueryParameter());
 		}
 
 		[Test]
@@ -38,7 +38,7 @@ namespace ColligoTest
 			string expected = "sort_direction=descending";
 
 			sd.SetValue(SortDirection.Types.Descending);
-			string formedString = sd.GetQuery();
+			string formedString = sd.GetQueryParameter();
 
 			Assert.AreEqual(expected, formedString);
 		}
@@ -49,7 +49,7 @@ namespace ColligoTest
 			string expected = "sort_direction=ascending";
 
 			sd.SetValue(SortDirection.Types.Ascending);
-			string formedString = sd.GetQuery();
+			string formedString = sd.GetQueryParameter();
 			Assert.AreEqual(expected, formedString);
 		}
 	}

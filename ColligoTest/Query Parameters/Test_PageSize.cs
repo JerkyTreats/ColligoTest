@@ -19,14 +19,14 @@ namespace ColligoTest
 		{
 			string expected = "page_size=25";
 			page.AddValue(25);
-			string formedString = page.GetQuery();
+			string formedString = page.GetQueryParameter();
 			Assert.AreEqual(expected, formedString);
 		}
 
 		[Test]
 		public void PageSize_NullValueReturnsNullString()
 		{
-			Assert.IsNull(page.GetQuery());
+			Assert.IsNull(page.GetQueryParameter());
 		}
 
 		[Test]
@@ -36,7 +36,7 @@ namespace ColligoTest
 			page.AddValue(1);
 			page.AddValue(0);
 
-			string actual = page.GetQuery();
+			string actual = page.GetQueryParameter();
 
 			Assert.AreEqual(expected, actual);
 		}
@@ -47,7 +47,7 @@ namespace ColligoTest
 			string expected = "page_size=100";
 			page.AddValue(1000);
 
-			string actual = page.GetQuery();
+			string actual = page.GetQueryParameter();
 
 			Assert.AreEqual(expected, actual);
 		}

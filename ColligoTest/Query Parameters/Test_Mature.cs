@@ -38,7 +38,7 @@ namespace ColligoTest
 			string expected = "mature=all";
 
 			mature.SetValue(Mature.Types.All);
-			string formedString = mature.GetQuery();
+			string formedString = mature.GetQueryParameter();
 
 			Assert.AreEqual(expected, formedString);
 		}

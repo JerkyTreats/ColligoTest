@@ -24,9 +24,9 @@ namespace Colligo.REST
 			_value = Options[option];
 		}
 
-		public string GetQuery()
+		public string GetQueryParameter()
 		{
-			return QueryTools.GetQuery(_mature, _value);
+			return QueryTools.GetQueryParameter(_mature, _value);
 		}
 	}
 }

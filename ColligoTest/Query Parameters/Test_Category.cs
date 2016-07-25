@@ -19,14 +19,14 @@ namespace ColligoTest
 		{
 			string expected = "category=test";
 			category.AddValue("test");
-			string formedString = category.GetQuery();
+			string formedString = category.GetQueryParameter();
 			Assert.AreEqual(expected, formedString);
 		}
 
 		[Test]
 		public void Category_NullValueReturnsNull()
 		{
-			Assert.IsNull(category.GetQuery());
+			Assert.IsNull(category.GetQueryParameter());
 		}
 
 		[Test]
@@ -34,7 +34,7 @@ namespace ColligoTest
 		{
 			string expected = "category=test,shoe";
 			category.AddValue("test", "shoe");
-			string formedString = category.GetQuery();
+			string formedString = category.GetQueryParameter();
 			Assert.AreEqual(expected, formedString);
 		}
 	}

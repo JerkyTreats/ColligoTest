@@ -31,9 +31,9 @@ namespace Colligo.REST
 			}
 		}
 
-		public string GetQuery()
+		public string GetQueryParameter()
 		{
-			return QueryTools.GetQuery(_include, ValuesToList());
+			return QueryTools.GetQueryParameter(_include, ValuesToList());
 		}
 
 		string ValuesToList()

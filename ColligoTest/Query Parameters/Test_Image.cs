@@ -220,7 +220,7 @@ namespace ColligoTest
 			string expected = "image_sizes=small";
 			Image.AddValues(Image.Types.Small);
 
-			string actual = Image.GetQuery();
+			string actual = Image.GetQueryParameter();
 			Assert.AreEqual(expected, actual);
 		}
 
@@ -229,7 +229,7 @@ namespace ColligoTest
 		{
 			string expected = "image_sizes=small,medium,large";
 			Image.AddValues(Image.Types.Small, Image.Types.Medium, Image.Types.Large);
-			string actual = Image.GetQuery();
+			string actual = Image.GetQueryParameter();
 
 			Assert.AreEqual(expected, actual);
 		}
@@ -237,7 +237,7 @@ namespace ColligoTest
 		[Test]
 		public void Image_NullValueReturnsNullString()
 		{
-			Assert.IsNull(Image.GetQuery());
+			Assert.IsNull(Image.GetQueryParameter());
 		}
 	}
 }

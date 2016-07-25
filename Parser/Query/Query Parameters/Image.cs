@@ -92,9 +92,9 @@ namespace Colligo.REST
 			}
 		}
 
-		public string GetQuery()
+		public string GetQueryParameter()
 		{
-			return QueryTools.GetQuery(_key, ValuesToString());
+			return QueryTools.GetQueryParameter(_key, ValuesToString());
 		}
 
 		string ValuesToString()

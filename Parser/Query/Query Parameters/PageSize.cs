@@ -16,9 +16,9 @@
 				_value = value.ToString();
 		}
 
-		public string GetQuery()
+		public string GetQueryParameter()
 		{
-			return QueryTools.GetQuery(_key, _value);
+			return QueryTools.GetQueryParameter(_key, _value);
 		}
 	}
 }

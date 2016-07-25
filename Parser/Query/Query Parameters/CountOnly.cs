@@ -13,7 +13,7 @@
 			_value = value;
 		}
 
-		public string GetQuery()
+		public string GetQueryParameter()
 		{
 			if (!_value)
 				return null;
