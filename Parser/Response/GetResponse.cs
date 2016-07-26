@@ -6,7 +6,7 @@ namespace Colligo.REST.Response
 	/// <summary>
 	/// Response object deserialized from the GET API call;
 	/// </summary>
-	public class Get : ResponseData
+	public class GetResponse
 	{
 		[JsonProperty(PropertyName = "id")]
 		public string Id;
@@ -27,7 +27,7 @@ namespace Colligo.REST.Response
 		public string StopTime;
 
 		[JsonProperty(PropertyName = "all_day")]
-		public bool AllDay;
+		public int AllDay;
 
 		[JsonProperty(PropertyName = "tz_id")]
 		public int TzId;
@@ -51,7 +51,7 @@ namespace Colligo.REST.Response
 		public string VenueType;
 
 		[JsonProperty(PropertyName = "venue_display")]
-		public bool VenueDisplay;
+		public int VenueDisplay;
 
 		[JsonProperty(PropertyName = "address")]
 		public string Address;
@@ -96,7 +96,7 @@ namespace Colligo.REST.Response
 		public string Price;
 
 		[JsonProperty(PropertyName = "withdrawn")]
-		public bool Withdrawn;
+		public string Withdrawn;
 
 		[JsonProperty(PropertyName = "withdrawn_note")]
 		public string WithdrawnNote;
@@ -108,10 +108,10 @@ namespace Colligo.REST.Response
 		public List<Children> Children;
 
 		[JsonProperty(PropertyName = "links")]
-		public List<Link> Links;
+		public LinkContainer LinkContainer;
 
 		[JsonProperty(PropertyName = "comments")]
-		public List<Comment> Comments;
+		public CommentContainer CommentContainer;
 
 		[JsonProperty(PropertyName = "trackbacks")]
 		public List<Trackback> Trackbacks;
@@ -120,7 +120,7 @@ namespace Colligo.REST.Response
 		public List<Image> Images;
 
 		[JsonProperty(PropertyName = "tags")]
-		public List<Tag> Tags;
+		public TagContainer Tags;
 
 		[JsonProperty(PropertyName = "calendars")]
 		public List<Calendar> Calendars;
@@ -129,9 +129,9 @@ namespace Colligo.REST.Response
 		public List<Going> Going;
 
 		[JsonProperty(PropertyName = "properties")]
-		public List<Property> Properties;
+		public PropertyContainer PropertyContainer;
 
 		[JsonProperty(PropertyName = "categories")]
-		public List<Category> Categories;
+		public CategoryContainer CategoryContainer;
 	}
 }

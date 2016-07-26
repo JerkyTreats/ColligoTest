@@ -1,7 +1,9 @@
 ﻿using System.Net;
 using Newtonsoft.Json;
 using Colligo.REST.Query;
+using Colligo.REST.Response;
 using System.Collections.Generic;
+using System;
 
 namespace Colligo.REST
 {
@@ -20,34 +22,39 @@ namespace Colligo.REST
 		{
 			_webClient = new WebClient();
 		}
-		
+
 		/// <summary>
-		/// Sends data to the URI, deserializes and returns the response as a usable object
+		/// Performs a search query to the API by SearchQuery
 		/// </summary>
 		/// <param name="query"></param>
 		/// <returns></returns>
-		public Response.ResponseData MakeQuery(IQuery query)
+		public SearchResponse Search(SearchQuery query)
 		{
-			string response = GetResponse(query.GetQuery());
-			Response.ResponseData deserializedObject; 
-			switch (query.GetQueryType())
-			{
-				case QueryTypes.Get:
-					deserializedObject = DeserializeResponse<Response.Get>(response);
-					break;
-				case QueryTypes.Search:
-					deserializedObject = DeserializeResponse<Response.Search>(response);
-					break;
-				default:
-					return null;
-			}
+			string response = GetAPIResponse(query);
+			SearchResponse deserializedObject = DeserializeResponse<SearchResponse>(response);
 			return deserializedObject;
 		}
 
-		// Convert the string data into the appropriate Response object. 
-		T DeserializeResponse<T>(string data)
+		public GetResponse Get(GetQuery query)
 		{
-			T deserializedObject = JsonConvert.DeserializeObject<T>(data, Data.DefaultJSONSerializerSettings);
+			string response = GetAPIResponse(query);
+			GetResponse deserializedObject = DeserializeResponse<GetResponse>(response);
+			return deserializedObject;
+		}
+
+		//Get the data from the server as a string
+		string GetAPIResponse(IQuery query)
+		{
+			string response = GetResponse(query.BuildQuery());
+			if (response.Contains("\"status\" :") && response.Contains("\"error\" :") && response.Contains("\"description\" :"))
+				throw new ApplicationException(string.Format("API Returned an exception : [{0}]", response));
+			return response;
+		}
+
+		//Deserialzes the inputted JSON string to the specified type
+		T DeserializeResponse<T>(string response)
+		{
+			T deserializedObject = JsonConvert.DeserializeObject<T>(response, Data.DefaultJSONSerializerSettings);
 			return deserializedObject;
 		}
 

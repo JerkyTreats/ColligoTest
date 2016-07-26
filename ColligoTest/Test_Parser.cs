@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using Colligo.REST;
-using Colligo.REST.Response;
 using Colligo.REST.Query;
 
 namespace Colligo.Test
@@ -19,14 +18,22 @@ namespace Colligo.Test
 		[Test]
 		public void Parser_NonNullSearchResponseGeneratedBySendQuery()
 		{
-			REST.Query.Search query = new REST.Query.Search();
+			SearchQuery query = new SearchQuery();
 			query.KeyWords.AddValue("Test");
 			query.Image.AddValues(REST.Query.Image.Types.Small, REST.Query.Image.Types.Medium);
 
-			var data = _parser.MakeQuery(query);
+			var data = _parser.Search(query);
 			Assert.IsNotNull(data);
 		}
 
-
+		[Test]
+		public void Parser_NonNullSearchResponseGeneratedByGetQuery()
+		{
+			GetQuery query = new GetQuery();
+			query.Id.AddValue("E0-001-000278174-6");
+		
+			var data = _parser.Get(query);
+			Assert.IsNotNull(data);
+		}
 	}
 }

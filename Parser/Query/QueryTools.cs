@@ -32,16 +32,22 @@ namespace Colligo.REST.Query
 			return string.Format("{0}{1}{2}", key, _appender, value);
 		}
 
-		public static string GetQuery(List<IQueryParameter> parameters)
+		public static string GetQuery(string queryType, List<IQueryParameter> parameters)
 		{
-			string formedString = Data.QueryBase;
+			StringBuilder builder = new StringBuilder();
+			builder.Append(Data.URL);
+			builder.Append('/');
+			builder.Append(queryType);
+			builder.Append('?');
+			builder.Append(Data.Key);
+
 			foreach (IQueryParameter parameter in parameters)
 			{
 				string value = parameter.GetQueryParameter();
 				if (value != null)
-					formedString += "&" + value;
+					builder.Append("&" + value);
 			}
-			return formedString;
+			return builder.ToString();
 		}
 	}
 }

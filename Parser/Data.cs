@@ -8,7 +8,7 @@ namespace Colligo.REST
 	/// </summary>
 	public class Data
 	{
-		static string _url = "http://api.eventful.com/json/events/search";
+		static string _url = "http://api.eventful.com/json/events/";
 		static string _key = "2SZRKGrNmCMGT6PS";
 
 		/// <summary>
@@ -20,8 +20,6 @@ namespace Colligo.REST
 		/// Root URL for Eventful
 		/// </summary>
 		public static string URL { get { return _url; } }
-
-		public static string QueryBase { get { return string.Format("{0}?{1}", URL, Key); } }
 
 		public static JsonSerializerSettings DefaultJSONSerializerSettings
 		{

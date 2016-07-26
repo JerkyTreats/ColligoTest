@@ -5,8 +5,10 @@ namespace Colligo.REST.Query
 	/// <summary>
 	/// Forms the Search API call with the appropriate query parameters
 	/// </summary>
-	public class Search : IQuery
+	public class SearchQuery : IQuery
 	{
+		static string QUERY_TYPE = "search";
+
 		public BasicQueryParameter KeyWords = new BasicQueryParameter("keywords");
 		public BasicQueryParameter Language = new BasicQueryParameter("language");
 		public BasicQueryParameter Location = new BasicQueryParameter("location");
@@ -28,9 +30,9 @@ namespace Colligo.REST.Query
 		List<IQueryParameter> QueryParameters = new List<IQueryParameter>();
 
 		//Tells us the Type the JSON deserializer should populate
-		public System.Type Response = typeof(Response.Search);
+		public System.Type Response = typeof(Response.SearchResponse);
 
-		public Search()
+		public SearchQuery()
 		{
 			QueryParameters.Add(KeyWords);
 			QueryParameters.Add(Location);
@@ -51,9 +53,9 @@ namespace Colligo.REST.Query
 			QueryParameters.Add(Image);
 		}
 
-		public string GetQuery()
+		public string BuildQuery()
 		{
-			return QueryTools.GetQuery(QueryParameters);
+			return QueryTools.GetQuery(QUERY_TYPE, QueryParameters);
 		}
 
 		static Parser.QueryTypes Type = Parser.QueryTypes.Search;

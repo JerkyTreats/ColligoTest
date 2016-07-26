@@ -85,24 +85,25 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Query Parameters\Test_ChangeMultiDayStart.cs" />
-    <Compile Include="Query Parameters\Test_Id.cs" />
-    <Compile Include="Query Parameters\Test_PageNumber.cs" />
-    <Compile Include="Query Parameters\Test_Category.cs" />
-    <Compile Include="Query Parameters\Test_CountOnly.cs" />
-    <Compile Include="Query Parameters\Test_ExCategory.cs" />
-    <Compile Include="Query Parameters\Test_BasicQueryParameter.cs" />
-    <Compile Include="Query Parameters\Test_PageSize.cs" />
-    <Compile Include="Query Parameters\Test_SortDirection.cs" />
-    <Compile Include="Query Parameters\Test_Image.cs" />
-    <Compile Include="Query Parameters\Test_Include.cs" />
-    <Compile Include="Query Parameters\Test_Mature.cs" />
-    <Compile Include="Query Parameters\Test_SortOrder.cs" />
-    <Compile Include="Query Parameters\Test_Units.cs" />
+    <Compile Include="Query\Query Parameters\Test_ChangeMultiDayStart.cs" />
+    <Compile Include="Query\Query Parameters\Test_Id.cs" />
+    <Compile Include="Query\Query Parameters\Test_PageNumber.cs" />
+    <Compile Include="Query\Query Parameters\Test_Category.cs" />
+    <Compile Include="Query\Query Parameters\Test_CountOnly.cs" />
+    <Compile Include="Query\Query Parameters\Test_ExCategory.cs" />
+    <Compile Include="Query\Query Parameters\Test_BasicQueryParameter.cs" />
+    <Compile Include="Query\Query Parameters\Test_PageSize.cs" />
+    <Compile Include="Query\Query Parameters\Test_SortDirection.cs" />
+    <Compile Include="Query\Query Parameters\Test_Image.cs" />
+    <Compile Include="Query\Query Parameters\Test_Include.cs" />
+    <Compile Include="Query\Query Parameters\Test_Mature.cs" />
+    <Compile Include="Query\Query Parameters\Test_SortOrder.cs" />
+    <Compile Include="Query\Query Parameters\Test_Units.cs" />
+    <Compile Include="Response\Test_Response_Search.cs" />
     <Compile Include="Test_Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test_Get.cs" />
-    <Compile Include="Test_Search.cs" />
+    <Compile Include="Query\Test_Query_Get.cs" />
+    <Compile Include="Query\Test_Query_Search.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Colligo.REST.Response
 {
-	public class Search : ResponseData
+	public class SearchResponse
 	{
 		[JsonProperty(PropertyName = "total_items")]
 		public int TotalItems;
