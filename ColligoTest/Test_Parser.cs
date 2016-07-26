@@ -21,11 +21,12 @@ namespace Colligo.Test
 		{
 			REST.Query.Search query = new REST.Query.Search();
 			query.KeyWords.AddValue("Test");
-			query.Image.AddValues(Image.Types.Small, Image.Types.Medium);
+			query.Image.AddValues(REST.Query.Image.Types.Small, REST.Query.Image.Types.Medium);
 
 			var data = _parser.MakeQuery(query);
 			Assert.IsNotNull(data);
 		}
+
 
 	}
 }

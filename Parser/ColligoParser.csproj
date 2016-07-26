@@ -45,6 +45,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="Response\Calendar.cs" />
+    <Compile Include="Response\Category.cs" />
+    <Compile Include="Response\Children.cs" />
+    <Compile Include="Response\Comment.cs" />
     <Compile Include="Response\Event.cs" />
     <Compile Include="Response\Events.cs" />
     <Compile Include="Response\Get.cs" />
@@ -70,8 +74,15 @@
     <Compile Include="Query\QueryTools.cs" />
     <Compile Include="Query\Search.cs" />
     <Compile Include="Query\Query Parameters\Units.cs" />
+    <Compile Include="Response\Going.cs" />
+    <Compile Include="Response\Image.cs" />
+    <Compile Include="Response\Link.cs" />
+    <Compile Include="Response\Parent.cs" />
+    <Compile Include="Response\Property.cs" />
     <Compile Include="Response\ResponseData.cs" />
     <Compile Include="Response\Search.cs" />
+    <Compile Include="Response\Tag.cs" />
+    <Compile Include="Response\Trackback.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

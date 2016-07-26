@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Colligo.REST.Response
 {
@@ -100,5 +101,37 @@ namespace Colligo.REST.Response
 		[JsonProperty(PropertyName = "withdrawn_note")]
 		public string WithdrawnNote;
 
+		[JsonProperty(PropertyName = "parents")]
+		public List<Parent> Parents;
+
+		[JsonProperty(PropertyName = "children")]
+		public List<Children> Children;
+
+		[JsonProperty(PropertyName = "links")]
+		public List<Link> Links;
+
+		[JsonProperty(PropertyName = "comments")]
+		public List<Comment> Comments;
+
+		[JsonProperty(PropertyName = "trackbacks")]
+		public List<Trackback> Trackbacks;
+
+		[JsonProperty(PropertyName = "images")]
+		public List<Image> Images;
+
+		[JsonProperty(PropertyName = "tags")]
+		public List<Tag> Tags;
+
+		[JsonProperty(PropertyName = "calendars")]
+		public List<Calendar> Calendars;
+
+		[JsonProperty(PropertyName = "going")]
+		public List<Going> Going;
+
+		[JsonProperty(PropertyName = "properties")]
+		public List<Property> Properties;
+
+		[JsonProperty(PropertyName = "categories")]
+		public List<Category> Categories;
 	}
 }
