@@ -1,5 +1,5 @@
-﻿using System;
-using System.Net;
+﻿using Newtonsoft.Json;
+
 
 namespace Colligo.REST
 {
@@ -8,14 +8,14 @@ namespace Colligo.REST
 	/// </summary>
 	public class Data
 	{
-		static string _url = "http://api.eventful.com/rest/events/search";
+		static string _url = "http://api.eventful.com/json/events/search";
 		static string _key = "2SZRKGrNmCMGT6PS";
 
 		/// <summary>
 		/// API key for Eventful. ***POTENTIALLY INSECURE***
 		/// </summary>
 		public static string Key { get { return string.Format("app_key={0}", _key); } }
-		
+
 		/// <summary>
 		/// Root URL for Eventful
 		/// </summary>
@@ -23,7 +23,12 @@ namespace Colligo.REST
 
 		public static string QueryBase { get { return string.Format("{0}?{1}", URL, Key); } }
 
+		public static JsonSerializerSettings DefaultJSONSerializerSettings
+		{
+			get
+			{
+				return new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
+			}
+		}
 	}
-
-
 }

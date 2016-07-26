@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System;
+using System.Threading.Tasks;
 
 namespace Colligo.Test
 {
@@ -25,20 +26,14 @@ namespace Colligo.Test
 		}
 
 		[Test]
-		public void Parser_FormURLIsNotNull()
+		public void Parser_NonNullSearchResponseGeneratedBySendQuery()
 		{
-			Assert.IsNotNull(_parser.FormUrl());
-		}
+			Search query = new Search();
+			query.KeyWords.AddValue("Test");
+			query.Image.AddValues(Image.Types.Small, Image.Types.Medium);
 
-		[Test]
-		public void Parser_FormURLPassedParametersAppendedToUrl()
-		{
-			string a = "test1";
-			string b = "test2";
-
-			string url = _parser.FormUrl(a, b);
-
-			Assert.IsTrue(url.Contains(string.Format("{0}&{1}",a,b)));
+			SearchResponse data = _parser.SendQuery(query);
+			Assert.IsNotNull(data);
 		}
 
 	}
