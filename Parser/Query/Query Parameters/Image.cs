@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Colligo.REST
+namespace Colligo.REST.Query
 {
 	/// <summary>
 	/// Forms the comma delimited query parameter specifying the image sizes to return with the call

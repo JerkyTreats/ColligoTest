@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-namespace Colligo.REST
+namespace Colligo.REST.Query
 {
 	/// <summary>
 	/// Forms the parameter specifying additional optional sections should be included in the returned XML

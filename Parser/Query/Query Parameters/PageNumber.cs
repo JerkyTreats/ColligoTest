@@ -1,4 +1,4 @@
-﻿namespace Colligo.REST
+﻿namespace Colligo.REST.Query
 {
 	/// <summary>
 	/// Forms the parameter specifying the specific page number to include in the search results. 

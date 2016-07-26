@@ -1,4 +1,4 @@
-﻿namespace Colligo.REST
+﻿namespace Colligo.REST.Query
 {
 	/// <summary>
 	/// Forms the parameter specifying the distance from the location requested. 

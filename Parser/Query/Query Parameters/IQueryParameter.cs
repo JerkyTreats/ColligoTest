@@ -1,5 +1,5 @@
 ﻿
-namespace Colligo.REST
+namespace Colligo.REST.Query
 {
 	public interface IQueryParameter
 	{

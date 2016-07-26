@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Colligo.REST
+namespace Colligo.REST.Query
 {
 	/// <summary>
 	/// Forms the Search API call with the appropriate query parameters
@@ -27,6 +27,9 @@ namespace Colligo.REST
 
 		List<IQueryParameter> QueryParameters = new List<IQueryParameter>();
 
+		//Tells us the Type the JSON deserializer should populate
+		public System.Type Response = typeof(Response.Search);
+
 		public Search()
 		{
 			QueryParameters.Add(KeyWords);
@@ -51,6 +54,12 @@ namespace Colligo.REST
 		public string GetQuery()
 		{
 			return QueryTools.GetQuery(QueryParameters);
+		}
+
+		static Parser.QueryTypes Type = Parser.QueryTypes.Search;
+		public Parser.QueryTypes GetQueryType()
+		{
+			return Type;
 		}
 	}
 }

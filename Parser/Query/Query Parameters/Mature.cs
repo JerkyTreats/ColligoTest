@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Colligo.REST
+namespace Colligo.REST.Query
 {
 	/// <summary>
 	/// Forms the query parameter specifying the maturity level to be returned with the results

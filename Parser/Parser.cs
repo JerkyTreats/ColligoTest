@@ -1,38 +1,62 @@
 ﻿using System.Net;
 using Newtonsoft.Json;
+using Colligo.REST.Query;
+using System.Collections.Generic;
 
 namespace Colligo.REST
 {
+	/// <summary>
+	/// Makes API calls, deserializes the information returned into usable objects 
+	/// </summary>
 	public class Parser
 	{
+		/// <summary>
+		/// Specifies the available API calls that can be made
+		/// </summary>
+		public enum QueryTypes { Search, Get }
 		WebClient _webClient;
 
+		public Parser()
+		{
+			_webClient = new WebClient();
+		}
+		
 		/// <summary>
-		/// WebClient to manage requests to target 
+		/// Sends data to the URI, deserializes and returns the response as a usable object
 		/// </summary>
-		public WebClient WebClient
+		/// <param name="query"></param>
+		/// <returns></returns>
+		public Response.ResponseData MakeQuery(IQuery query)
 		{
-			get
+			string response = GetResponse(query.GetQuery());
+			Response.ResponseData deserializedObject; 
+			switch (query.GetQueryType())
 			{
-				if (_webClient == null)
-					_webClient = new WebClient();
-				return _webClient;
+				case QueryTypes.Get:
+					deserializedObject = DeserializeResponse<Response.Get>(response);
+					break;
+				case QueryTypes.Search:
+					deserializedObject = DeserializeResponse<Response.Search>(response);
+					break;
+				default:
+					return null;
 			}
+			return deserializedObject;
 		}
 
-		public SearchResponse SendQuery(IQuery query)
+		// Convert the string data into the appropriate Response object. 
+		T DeserializeResponse<T>(string data)
 		{
-			string response = GetResponse(query);
-			SearchResponse searchResponse = JsonConvert.DeserializeObject<SearchResponse>(response, Data.DefaultJSONSerializerSettings);
-			return searchResponse;
+			T deserializedObject = JsonConvert.DeserializeObject<T>(data, Data.DefaultJSONSerializerSettings);
+			return deserializedObject;
 		}
 
-		string GetResponse(IQuery query)
+		//get the text response from the WebClient
+		string GetResponse(string uriString)
 		{
-			var uri = new System.Uri(query.GetQuery());
-			string data = WebClient.DownloadString(uri);
+			var uri = new System.Uri(uriString);
+			string data = _webClient.DownloadString(uri);
 			return data;
 		}
-
-    }
+	}
 }

@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using Colligo.REST;
+using Colligo.REST.Query;
 
 namespace ColligoTest
 {

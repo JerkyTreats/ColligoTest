@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Colligo.REST
+namespace Colligo.REST.Query
 {
 	/// <summary>
 	/// Forms the query string for the Get API Call.
@@ -12,6 +12,7 @@ namespace Colligo.REST
 
 		List<IQueryParameter> QueryParameters = new List<IQueryParameter>();
 
+
 		public Get()
 		{
 			QueryParameters.Add(Id);
@@ -21,6 +22,12 @@ namespace Colligo.REST
 		public string GetQuery()
 		{
 			return QueryTools.GetQuery(QueryParameters);
+		}
+
+		Parser.QueryTypes Type = Parser.QueryTypes.Get;
+		public Parser.QueryTypes GetQueryType()
+		{
+			return Type;
 		}
 	}
 }

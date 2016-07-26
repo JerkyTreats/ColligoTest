@@ -1,9 +1,9 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Colligo.REST
+namespace Colligo.REST.Response
 {
-	public class SearchResponse
+	public class Search : ResponseData
 	{
 		[JsonProperty(PropertyName = "total_items")]
 		public int TotalItems;

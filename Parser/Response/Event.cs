@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Colligo.REST
+namespace Colligo.REST.Response
 {
 	public class Event
 	{

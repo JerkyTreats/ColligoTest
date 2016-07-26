@@ -1,4 +1,4 @@
-﻿namespace Colligo.REST
+﻿namespace Colligo.REST.Query
 { 
 	/// <summary>
 	/// Forms the parameter specifying if the start_date of long duration events should be changed to ensure they are within search date parameter

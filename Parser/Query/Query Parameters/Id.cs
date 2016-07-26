@@ -1,4 +1,4 @@
-﻿namespace Colligo.REST
+﻿namespace Colligo.REST.Query
 {
 	public class Id : IQueryParameter
 	{

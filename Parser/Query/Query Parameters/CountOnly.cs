@@ -1,4 +1,4 @@
-﻿namespace Colligo.REST
+﻿namespace Colligo.REST.Query
 {
 	/// <summary>
 	/// Specifies whether to limit the results to only total_items and search_time elements. 

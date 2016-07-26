@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Colligo.REST
+namespace Colligo.REST.Query
 {
 	/// <summary>
 	///  Unit type to use when specifying a location range.
