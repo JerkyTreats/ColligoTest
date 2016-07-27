@@ -29,9 +29,6 @@ namespace Colligo.REST.Query
 
 		List<IQueryParameter> QueryParameters = new List<IQueryParameter>();
 
-		//Tells us the Type the JSON deserializer should populate
-		public System.Type Response = typeof(Response.SearchResponse);
-
 		public SearchQuery()
 		{
 			QueryParameters.Add(KeyWords);
@@ -56,12 +53,6 @@ namespace Colligo.REST.Query
 		public string BuildQuery()
 		{
 			return QueryTools.GetQuery(QUERY_TYPE, QueryParameters);
-		}
-
-		static Parser.QueryTypes Type = Parser.QueryTypes.Search;
-		public Parser.QueryTypes GetQueryType()
-		{
-			return Type;
 		}
 	}
 }

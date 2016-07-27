@@ -85,6 +85,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="EventJsonData.cs" />
     <Compile Include="Query\Query Parameters\Test_ChangeMultiDayStart.cs" />
     <Compile Include="Query\Query Parameters\Test_Id.cs" />
     <Compile Include="Query\Query Parameters\Test_PageNumber.cs" />
@@ -99,7 +100,9 @@
     <Compile Include="Query\Query Parameters\Test_Mature.cs" />
     <Compile Include="Query\Query Parameters\Test_SortOrder.cs" />
     <Compile Include="Query\Query Parameters\Test_Units.cs" />
-    <Compile Include="Response\Test_Response_Search.cs" />
+    <Compile Include="Response\Test_EventDeserializer.cs" />
+    <Compile Include="Response\Test_SearchResponseDeserializer.cs" />
+    <Compile Include="SearchResponseJsonData.cs" />
     <Compile Include="Test_Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query\Test_Query_Get.cs" />

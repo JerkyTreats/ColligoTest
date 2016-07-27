@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="Query\IQuery.cs" />
     <Compile Include="Response\CategoryContainer.cs" />
     <Compile Include="Response\LinkContainer.cs" />
     <Compile Include="Response\PropertyContainer.cs" />
@@ -57,7 +58,6 @@
     <Compile Include="Response\Response Elements\Events.cs" />
     <Compile Include="Response\GetResponse.cs" />
     <Compile Include="Query\Query Parameters\Id.cs" />
-    <Compile Include="Query\IQuery.cs" />
     <Compile Include="Query\Query Parameters\ChangeMultiDayStart.cs" />
     <Compile Include="Query\Query Parameters\PageNumber.cs" />
     <Compile Include="Query\Query Parameters\Category.cs" />
@@ -65,7 +65,7 @@
     <Compile Include="Query\Query Parameters\ExCategory.cs" />
     <Compile Include="Query\Query Parameters\PageSize.cs" />
     <Compile Include="Query\GetQuery.cs" />
-    <Compile Include="Parser.cs" />
+    <Compile Include="APIAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query\Query Parameters\Image.cs" />
     <Compile Include="Query\Query Parameters\Include.cs" />
@@ -83,6 +83,7 @@
     <Compile Include="Response\Response Elements\Link.cs" />
     <Compile Include="Response\Response Elements\Parent.cs" />
     <Compile Include="Response\Response Elements\Property.cs" />
+    <Compile Include="Response\ResponseFactory.cs" />
     <Compile Include="Response\SearchResponse.cs" />
     <Compile Include="Response\Response Elements\Tag.cs" />
     <Compile Include="Response\Response Elements\Trackback.cs" />

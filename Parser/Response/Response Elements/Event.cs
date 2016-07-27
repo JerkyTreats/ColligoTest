@@ -2,6 +2,9 @@
 
 namespace Colligo.REST.Response
 {
+	/// <summary>
+	/// Maps an API JSON "Event" response into a usable Event data object
+	/// </summary>
 	public class Event
 	{
 		[JsonProperty(PropertyName = "id")]
@@ -84,7 +87,5 @@ namespace Colligo.REST.Response
 
 		[JsonProperty(PropertyName = "modified")]
 		public string Modified;
-
-
 	}
 }

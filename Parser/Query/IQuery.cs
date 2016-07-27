@@ -1,6 +1,4 @@
-﻿using Colligo.REST.Response;
-
-namespace Colligo.REST.Query
+﻿namespace Colligo.REST.Query
 {
 	public interface IQuery
 	{

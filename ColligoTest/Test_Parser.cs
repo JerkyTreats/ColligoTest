@@ -1,20 +1,14 @@
 ﻿using NUnit.Framework;
 using Colligo.REST;
 using Colligo.REST.Query;
+using Colligo.REST.Response;
+using System;
 
 namespace Colligo.Test
 {
 	[TestFixture]
 	public class Test_Parser
 	{
-		Parser _parser;
-
-		[SetUp]
-		public void Setup()
-		{
-			_parser = new Parser();
-		}
-
 		[Test]
 		public void Parser_NonNullSearchResponseGeneratedBySendQuery()
 		{
@@ -22,18 +16,23 @@ namespace Colligo.Test
 			query.KeyWords.AddValue("Test");
 			query.Image.AddValues(REST.Query.Image.Types.Small, REST.Query.Image.Types.Medium);
 
-			var data = _parser.Search(query);
-			Assert.IsNotNull(data);
+			Uri uri = new Uri(query.BuildQuery());
+			string json = APIAccess.GetStringResponseFromAPI(uri);
+			SearchResponse response = ResponseFactory.DeserializeJson<SearchResponse>(json);
+			Assert.IsNotNull(response);
 		}
 
 		[Test]
-		public void Parser_NonNullSearchResponseGeneratedByGetQuery()
+		public void Parser_NonNullGetResponseGeneratedByGetQuery()
 		{
 			GetQuery query = new GetQuery();
 			query.Id.AddValue("E0-001-000278174-6");
-		
-			var data = _parser.Get(query);
-			Assert.IsNotNull(data);
+
+			Uri uri = new Uri(query.BuildQuery());
+			string json = APIAccess.GetStringResponseFromAPI(uri);
+			GetResponse response = ResponseFactory.DeserializeJson<GetResponse>(json);
+
+			Assert.IsNotNull(response);
 		}
 	}
 }
