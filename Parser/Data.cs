@@ -4,9 +4,9 @@
 namespace Colligo.REST
 {
 	/// <summary>
-	/// Class that holds the data to successfully connect to the API. 
+	/// This is a convenience class to hold miscellanious data. 
 	/// </summary>
-	public class Data
+	public static class Data
 	{
 		static string _url = "http://api.eventful.com/json/events/";
 		static string _key = "2SZRKGrNmCMGT6PS";
