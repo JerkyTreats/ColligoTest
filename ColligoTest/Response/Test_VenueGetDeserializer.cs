@@ -137,5 +137,105 @@ namespace ColligoTest
 		{
 			Assert.AreEqual(data[VenuesGetResponseJsonData.WithdrawnNote], response.WithdrawnNote);
 		}
+
+		[Test]
+		public void VenueGetDeserializer_ParentsPopulatedCorrectly()
+		{
+			var parentData = ParentsJsonData.ParentsData;
+			var result = response.Parents.Parents;
+			Assert.IsTrue(response.Parents.Parents.Count > 0);
+			Assert.AreEqual(parentData[ParentsJsonData.Id], result[0].Id);
+			Assert.AreEqual(parentData[ParentsJsonData.Title], result[0].Title);
+		}
+
+		[Test]
+		public void VenueGetDeserializer_ChildrenPopulatedCorrectly()
+		{
+			var childrenData = ChildrenData.Children;
+			var result = response.Children.Children;
+			Assert.IsTrue(response.Children.Children.Count > 0);
+			Assert.AreEqual(childrenData[ChildrenData.Id], result[0].Id);
+			Assert.AreEqual(childrenData[ChildrenData.Title], result[0].Title);
+		}
+
+		[Test]
+		public void VenueGetDeserializer_EventsPopulatedCorrectly()
+		{
+			Assert.IsTrue(response.Events.Events.Length > 0);
+		}
+
+		[Test]
+		public void VenueGetDeserializer_LinksPopulatedCorrectly()
+		{
+			var linksData = LinksData.Links;
+			var result = response.LinkContainer.Links;
+			Assert.IsTrue(result.Count > 0);
+			Assert.AreEqual(linksData[LinksData.Id], result[0].Id);
+			Assert.AreEqual(linksData[LinksData.Url], result[0].Url);
+			Assert.AreEqual(linksData[LinksData.Description], result[0].Description);
+			Assert.AreEqual(linksData[LinksData.Time], result[0].Time);
+			Assert.AreEqual(linksData[LinksData.Type], result[0].Type);
+			Assert.AreEqual(linksData[LinksData.Username], result[0].Username);
+		}
+
+		[Test]
+		public void VenueGetDeserializer_CommentsPopulatedCorrectly()
+		{
+			var commentsData = CommentsData.Comments;
+			var result = response.CommentContainer.Comments;
+			Assert.IsTrue(result.Count > 0);
+			Assert.AreEqual(commentsData[CommentsData.Id], result[0].Id);
+			Assert.AreEqual(commentsData[CommentsData.Text], result[0].Text);
+			Assert.AreEqual(commentsData[CommentsData.Time], result[0].Time);
+			Assert.AreEqual(commentsData[CommentsData.Username], result[0].Username);
+		}
+
+		[Test]
+		public void VenueGetDeserializer_TrackbacksPopulatedCorrectly()
+		{
+			var trackbackData = TrackbacksData.Trackbacks;
+			var result = response.Trackbacks.Trackbacks;
+			Assert.IsTrue(result.Count > 0);
+			Assert.AreEqual(trackbackData[TrackbacksData.Id], result[0].Id);
+			Assert.AreEqual(trackbackData[TrackbacksData.BlogName], result[0].BlogName);
+			Assert.AreEqual(trackbackData[TrackbacksData.Excerpt], result[0].Excerpt);
+			Assert.AreEqual(trackbackData[TrackbacksData.Time], result[0].Time);
+			Assert.AreEqual(trackbackData[TrackbacksData.TrackbackUrl], result[0].TrackbackUrl);
+		}
+
+		[Test]
+		public void VenueGetDeserializer_ImagesPopulatedCorrectly()
+		{
+			var imagesData = ImageData.Images;
+			var result = response.Images.Images;
+			Assert.IsTrue(result.Count > 0);
+			Assert.AreEqual(imagesData[ImageData.Id], result[0].Id);
+			Assert.AreEqual(imagesData[ImageData.Caption], result[0].Caption);
+			Assert.AreEqual(imagesData[ImageData.Height], result[0].Height);
+			Assert.AreEqual(imagesData[ImageData.Width], result[0].Width);
+			Assert.AreEqual(imagesData[ImageData.Url], result[0].Url);
+		}
+
+		[Test]
+		public void VenueGetDeserializer_TagsPopulatedCorrectly()
+		{
+			var tagsData = TagData.Tags;
+			var result = response.Tags.Tags;
+			Assert.IsTrue(result.Count > 0);
+			Assert.AreEqual(tagsData[TagData.Id], result[0].Id);
+			Assert.AreEqual(tagsData[TagData.Owner], result[0].Owner);
+			Assert.AreEqual(tagsData[TagData.Title], result[0].Title);
+		}
+
+		[Test]
+		public void VenueGetDeserializer_PropertyPopulatedCorrectly()
+		{
+			var propData = PropertyData.Properties;
+			var result = response.PropertyContainer.Properties;
+			Assert.IsTrue(result.Count > 0);
+			Assert.AreEqual(propData[PropertyData.Id], result[0].Id);
+			Assert.AreEqual(propData[PropertyData.Name], result[0].Name);
+			Assert.AreEqual(propData[PropertyData.Value], result[0].Value);
+		}
 	}
 }
