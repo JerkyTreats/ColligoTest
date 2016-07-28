@@ -46,9 +46,13 @@
   <ItemGroup>
     <Compile Include="Data.cs" />
     <Compile Include="Query\IQuery.cs" />
-    <Compile Include="Response\CategoryContainer.cs" />
-    <Compile Include="Response\LinkContainer.cs" />
-    <Compile Include="Response\PropertyContainer.cs" />
+    <Compile Include="Query\VenuesGet.cs" />
+    <Compile Include="Response\ChildrenContainer.cs" />
+    <Compile Include="Response\ImageContainer.cs" />
+    <Compile Include="Response\ParentContainer.cs" />
+    <Compile Include="Response\Response Elements\CategoryContainer.cs" />
+    <Compile Include="Response\Response Elements\LinkContainer.cs" />
+    <Compile Include="Response\Response Elements\PropertyContainer.cs" />
     <Compile Include="Response\Response Elements\Calendar.cs" />
     <Compile Include="Response\Response Elements\Category.cs" />
     <Compile Include="Response\Response Elements\Children.cs" />
@@ -56,7 +60,7 @@
     <Compile Include="Response\Response Elements\Comments.cs" />
     <Compile Include="Response\Response Elements\Event.cs" />
     <Compile Include="Response\Response Elements\Events.cs" />
-    <Compile Include="Response\GetResponse.cs" />
+    <Compile Include="Response\EventsGetResponse.cs" />
     <Compile Include="Query\Query Parameters\Id.cs" />
     <Compile Include="Query\Query Parameters\ChangeMultiDayStart.cs" />
     <Compile Include="Query\Query Parameters\PageNumber.cs" />
@@ -64,7 +68,7 @@
     <Compile Include="Query\Query Parameters\CountOnly.cs" />
     <Compile Include="Query\Query Parameters\ExCategory.cs" />
     <Compile Include="Query\Query Parameters\PageSize.cs" />
-    <Compile Include="Query\GetQuery.cs" />
+    <Compile Include="Query\EventsGet.cs" />
     <Compile Include="APIAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query\Query Parameters\Image.cs" />
@@ -76,18 +80,20 @@
     <Compile Include="Query\Query Parameters\SortDirection.cs" />
     <Compile Include="Query\Query Parameters\Within.cs" />
     <Compile Include="Query\QueryTools.cs" />
-    <Compile Include="Query\SearchQuery.cs" />
+    <Compile Include="Query\EventsSearch.cs" />
     <Compile Include="Query\Query Parameters\Units.cs" />
     <Compile Include="Response\Response Elements\Going.cs" />
     <Compile Include="Response\Response Elements\Image.cs" />
     <Compile Include="Response\Response Elements\Link.cs" />
     <Compile Include="Response\Response Elements\Parent.cs" />
     <Compile Include="Response\Response Elements\Property.cs" />
-    <Compile Include="Response\ResponseFactory.cs" />
-    <Compile Include="Response\SearchResponse.cs" />
+    <Compile Include="Response\Response Elements\ResponseFactory.cs" />
+    <Compile Include="Response\EventsSearchResponse.cs" />
     <Compile Include="Response\Response Elements\Tag.cs" />
     <Compile Include="Response\Response Elements\Trackback.cs" />
-    <Compile Include="Response\TagContainer.cs" />
+    <Compile Include="Response\Response Elements\TagContainer.cs" />
+    <Compile Include="Response\TrackbackContainer.cs" />
+    <Compile Include="Response\VenuesGetResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

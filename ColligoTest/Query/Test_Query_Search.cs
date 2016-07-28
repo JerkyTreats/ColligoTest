@@ -7,17 +7,17 @@ namespace ColligoTest
 	[TestFixture]
 	class Test_Search
 	{
-		SearchQuery search;
-		static string BASE = Data.URL + "/search?" + Data.Key;
+		EventsSearch search;
+		static string BASE = Data.URL + @"events/search?" + Data.Key;
 
 		[SetUp]
 		public void SetUp()
 		{
-			search = new SearchQuery();
+			search = new EventsSearch();
 		}
 
 		[Test]
-		public void Search_GetQueryWithNoSetOptionsReturnsBaseQueryString()
+		public void EventsSearch_GetQueryWithNoSetOptionsReturnsBaseQueryString()
 		{
 			string expected = BASE;
 			string actual = search.BuildQuery();
@@ -25,7 +25,7 @@ namespace ColligoTest
 		}
 
 		[Test]
-		public void Search_GetQueryWithMulitpleValuesSetReturnsCorrectString()
+		public void EventsSearch_GetQueryWithMulitpleValuesSetReturnsCorrectString()
 		{
 			string expected = BASE + "&keywords=test&image_sizes=small,thumb";
 			search.KeyWords.AddValue("test");

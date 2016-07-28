@@ -5,9 +5,9 @@ namespace Colligo.REST.Query
 	/// <summary>
 	/// Forms the Search API call with the appropriate query parameters
 	/// </summary>
-	public class SearchQuery : IQuery
+	public class EventsSearch : IQuery
 	{
-		static string QUERY_TYPE = "search";
+		static string QUERY_TYPE = "events/search";
 
 		public BasicQueryParameter KeyWords = new BasicQueryParameter("keywords");
 		public BasicQueryParameter Language = new BasicQueryParameter("language");
@@ -29,7 +29,7 @@ namespace Colligo.REST.Query
 
 		List<IQueryParameter> QueryParameters = new List<IQueryParameter>();
 
-		public SearchQuery()
+		public EventsSearch()
 		{
 			QueryParameters.Add(KeyWords);
 			QueryParameters.Add(Location);

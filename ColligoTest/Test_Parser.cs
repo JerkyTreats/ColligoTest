@@ -12,27 +12,41 @@ namespace Colligo.Test
 		[Test]
 		public void Parser_NonNullSearchResponseGeneratedBySendQuery()
 		{
-			SearchQuery query = new SearchQuery();
+			EventsSearch query = new EventsSearch();
 			query.KeyWords.AddValue("Test");
 			query.Image.AddValues(REST.Query.Image.Types.Small, REST.Query.Image.Types.Medium);
 
 			Uri uri = new Uri(query.BuildQuery());
 			string json = APIAccess.GetStringResponseFromAPI(uri);
-			SearchResponse response = ResponseFactory.DeserializeJson<SearchResponse>(json);
+			EventsSearchResponse response = ResponseFactory.DeserializeJson<EventsSearchResponse>(json);
 			Assert.IsNotNull(response);
 		}
 
 		[Test]
 		public void Parser_NonNullGetResponseGeneratedByGetQuery()
 		{
-			GetQuery query = new GetQuery();
+			EventsGet query = new EventsGet();
 			query.Id.AddValue("E0-001-000278174-6");
+			query.Image.AddValues(REST.Query.Image.Types.Small);
 
 			Uri uri = new Uri(query.BuildQuery());
 			string json = APIAccess.GetStringResponseFromAPI(uri);
-			GetResponse response = ResponseFactory.DeserializeJson<GetResponse>(json);
+			EventsGetResponse response = ResponseFactory.DeserializeJson<EventsGetResponse>(json);
 
 			Assert.IsNotNull(response);
+		}
+
+		[Test]
+		public void Parser_ValidGetResponseObjectReturnedByGetQuery()
+		{
+			EventsGet query = new EventsGet();
+			query.Id.AddValue("E0-001-000278174-6");
+			query.Image.AddValues(REST.Query.Image.Types.Thumb);
+
+			Uri uri = new Uri(query.BuildQuery());
+			string json = APIAccess.GetStringResponseFromAPI(uri);
+			EventsGetResponse response = ResponseFactory.DeserializeJson<EventsGetResponse>(json);
+
 		}
 	}
 }

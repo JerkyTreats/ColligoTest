@@ -33,7 +33,7 @@ namespace ColligoTest
 		}
 
 		[Test]
-		public void Search_SortDirectionReturnsDescendingString()
+		public void SortDirection_ReturnsDescendingString()
 		{
 			string expected = "sort_direction=descending";
 
@@ -44,7 +44,7 @@ namespace ColligoTest
 		}
 
 		[Test]
-		public void Search_SortDirectionReturnsAscendingString()
+		public void SortDirection_ReturnsAscendingString()
 		{
 			string expected = "sort_direction=ascending";
 

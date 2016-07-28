@@ -13,7 +13,7 @@ namespace ColligoTest
 			foreach (KeyValuePair<string, object> KVP in data)
 			{
 				builder.Append(@"""" + KVP.Key + @""" : """ + KVP.Value.ToString() + @"""");
-				if (counter != data.Count)
+				if (counter != (data.Count - 1) )
 					builder.Append(',');
 				counter++;
 			}

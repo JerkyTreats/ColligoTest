@@ -15,7 +15,7 @@ namespace ColligoTest
 		}
 
 		[Test]
-		public void Search_GetUnitsReturnsValidString()
+		public void Units_GetUnitsReturnsValidString()
 		{
 			string expected = "units=km";
 			units.AddValue(Units.Types.Kilometers);
@@ -26,7 +26,7 @@ namespace ColligoTest
 		}
 
 		[Test]
-		public void Search_GetUnitsNullValueReturnsNull()
+		public void Units_GetUnitsNullValueReturnsNull()
 		{
 			Assert.IsNull(units.GetQueryParameter());
 		}

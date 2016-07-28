@@ -33,7 +33,7 @@ namespace ColligoTest
 		}
 
 		[Test]
-		public void Search_SortOrderReturnsPopularityString()
+		public void SortOrder_ReturnsPopularityString()
 		{
 			string expected = "sort_order=popularity";
 			so.SetValue(SortOrder.Types.Popularity);
@@ -44,7 +44,7 @@ namespace ColligoTest
 		}
 
 		[Test]
-		public void Search_SortOrderReturnsDateString()
+		public void SortOrder_ReturnsDateString()
 		{
 			string expected = "sort_order=date";
 			so.SetValue(SortOrder.Types.Date);
@@ -55,7 +55,7 @@ namespace ColligoTest
 		}
 
 		[Test]
-		public void Search_SortOrderReturnsRelevanceString()
+		public void SortOrder_ReturnsRelevanceString()
 		{
 			string expected = "sort_order=relevance";
 			so.SetValue(SortOrder.Types.Relevance);

@@ -8,7 +8,7 @@ namespace Colligo.REST
 	/// </summary>
 	public static class Data
 	{
-		static string _url = "http://api.eventful.com/json/events/";
+		static string _url = "http://api.eventful.com/json/";
 		static string _key = "2SZRKGrNmCMGT6PS";
 
 		/// <summary>

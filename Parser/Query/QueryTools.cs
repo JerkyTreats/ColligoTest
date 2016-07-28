@@ -36,7 +36,6 @@ namespace Colligo.REST.Query
 		{
 			StringBuilder builder = new StringBuilder();
 			builder.Append(Data.URL);
-			builder.Append('/');
 			builder.Append(queryType);
 			builder.Append('?');
 			builder.Append(Data.Key);

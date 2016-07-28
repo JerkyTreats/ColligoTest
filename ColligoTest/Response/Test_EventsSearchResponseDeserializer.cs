@@ -8,9 +8,9 @@ using System.Collections.Generic;
 namespace ColligoTest.Response
 {
 	[TestFixture]
-	public class Test_SearchResponseDeserializer
+	public class Test_EventsEventsSearchResponseDeserializer
 	{
-		SearchResponse response;
+		EventsSearchResponse response;
 		static int numberOfEvents = 3;
 		Dictionary<string, object> data = SearchResponseJsonData.SearchResponseData;
 
@@ -18,59 +18,59 @@ namespace ColligoTest.Response
 		public void SetUp()
 		{
 			string json = SearchResponseJsonData.GetSearchResponseJson(numberOfEvents);
-			response = ResponseFactory.DeserializeJson<SearchResponse>(json);
+			response = ResponseFactory.DeserializeJson<EventsSearchResponse>(json);
 		}
 
 		[Test]
-		public void SearchResponseDeserializer_TotalItemsPopulatedCorrectly()
+		public void EventsSearchResponseDeserializer_TotalItemsPopulatedCorrectly()
 		{
 			Assert.AreEqual(data[SearchResponseJsonData.totalItems], response.TotalItems);
 		}
 
 		[Test]
-		public void SearchResponseDeserializer_PageSizePopulatedCorrectly()
+		public void EventsSearchResponseDeserializer_PageSizePopulatedCorrectly()
 		{
 			Assert.AreEqual(data[SearchResponseJsonData.pageSize], response.PageSize);
 		}
 
 		[Test]
-		public void SearchResponseDeserializer_PageCountPopulatedCorrectly()
+		public void EventsSearchResponseDeserializer_PageCountPopulatedCorrectly()
 		{
 			Assert.AreEqual(data[SearchResponseJsonData.pageCount], response.PageCount);
 		}
 
 		[Test]
-		public void SearchResponseDeserializer_CurrentPageNumberPopulatedCorrectly()
+		public void EventsSearchResponseDeserializer_CurrentPageNumberPopulatedCorrectly()
 		{
 			Assert.AreEqual(data[SearchResponseJsonData.pageNumber], response.CurrentPageNumber);
 		}
 
 		[Test]
-		public void SearchResponseDeserializer_PageItemsPopulatedCorrectly()
+		public void EventsSearchResponseDeserializer_PageItemsPopulatedCorrectly()
 		{
 			Assert.AreEqual(data[SearchResponseJsonData.pageItems], response.PageItems);
 		}
 
 		[Test]
-		public void SearchResponseDeserializer_FirstItemPopulatedCorrectly()
+		public void EventsSearchResponseDeserializer_FirstItemPopulatedCorrectly()
 		{
 			Assert.AreEqual(data[SearchResponseJsonData.firstItem], response.FirstItem);
 		}
 
 		[Test]
-		public void SearchResponseDeserializer_LastItemPopulatedCorrectly()
+		public void EventsSearchResponseDeserializer_LastItemPopulatedCorrectly()
 		{
 			Assert.AreEqual(data[SearchResponseJsonData.lastItem], response.LastItem);
 		}
 		
 		[Test]
-		public void SearchResponseDeserializer_SearchTimePopulatedCorrectly()
+		public void EventsSearchResponseDeserializer_SearchTimePopulatedCorrectly()
 		{
 			Assert.AreEqual(data[SearchResponseJsonData.searchTime], response.SearchTime);
 		}
 
 		[Test]
-		public void SearchResponseDeserializer_EventsCollectionPopulatedCorrectly()
+		public void EventsSearchResponseDeserializer_EventsCollectionPopulatedCorrectly()
 		{
 			Assert.IsNotNull(response.Events);
 			Assert.AreEqual(numberOfEvents, response.Events.Events.Length);
