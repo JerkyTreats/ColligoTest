@@ -5,7 +5,7 @@ namespace Colligo.REST.Response
 {
 	public class LinkContainer
 	{
-		[JsonProperty(PropertyName = "links")]
+		[JsonProperty(PropertyName = "link")]
 		public List<Link> Links;
 	}
 }

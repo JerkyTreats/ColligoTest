@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ColligoTest.Response
+namespace ColligoTest
 {
 	public static class LinksData
 	{

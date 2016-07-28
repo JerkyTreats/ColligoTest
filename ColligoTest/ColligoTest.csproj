@@ -85,7 +85,11 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="EventJsonData.cs" />
+    <Compile Include="Response\Data\CalendarData.cs" />
+    <Compile Include="Response\Data\CategoryData.cs" />
+    <Compile Include="Response\Data\ChildrenData.cs" />
+    <Compile Include="Response\Data\CommentsData.cs" />
+    <Compile Include="Response\Data\EventJsonData.cs" />
     <Compile Include="Query\Query Parameters\Test_ChangeMultiDayStart.cs" />
     <Compile Include="Query\Query Parameters\Test_Id.cs" />
     <Compile Include="Query\Query Parameters\Test_PageNumber.cs" />
@@ -100,9 +104,19 @@
     <Compile Include="Query\Query Parameters\Test_Mature.cs" />
     <Compile Include="Query\Query Parameters\Test_SortOrder.cs" />
     <Compile Include="Query\Query Parameters\Test_Units.cs" />
+    <Compile Include="Response\Data\GetResponseJsonData.cs" />
+    <Compile Include="Response\Data\GoingData.cs" />
+    <Compile Include="Response\Data\ImageData.cs" />
+    <Compile Include="Response\Data\JsonBuilder.cs" />
+    <Compile Include="Response\Data\LinksData.cs" />
+    <Compile Include="Response\Data\ParentsJsonData.cs" />
+    <Compile Include="Response\Data\PropertyData.cs" />
+    <Compile Include="Response\Data\TagData.cs" />
+    <Compile Include="Response\Data\TrackbacksData.cs" />
     <Compile Include="Response\Test_EventDeserializer.cs" />
+    <Compile Include="Response\Test_GetResponseDeserializer.cs" />
     <Compile Include="Response\Test_SearchResponseDeserializer.cs" />
-    <Compile Include="SearchResponseJsonData.cs" />
+    <Compile Include="Response\Data\SearchResponseJsonData.cs" />
     <Compile Include="Test_Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Query\Test_Query_Get.cs" />

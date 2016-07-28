@@ -5,7 +5,7 @@ namespace Colligo.REST.Response
 {
 	public class CommentContainer
 	{
-		[JsonProperty(PropertyName = "comments")]
+		[JsonProperty(PropertyName = "comment")]
 		public List<Comment> Comments;
 	}
 }

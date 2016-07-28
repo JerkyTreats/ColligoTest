@@ -90,22 +90,22 @@ namespace Colligo.REST.Response
 		public int Privacy;
 
 		[JsonProperty(PropertyName = "free")]
-		public bool Free;
+		public string Free; //0 = true, 1 = false, blank = unknown
 
 		[JsonProperty(PropertyName = "price")]
 		public string Price;
 
 		[JsonProperty(PropertyName = "withdrawn")]
-		public string Withdrawn;
+		public int Withdrawn;
 
 		[JsonProperty(PropertyName = "withdrawn_note")]
 		public string WithdrawnNote;
 
-		[JsonProperty(PropertyName = "parents")]
-		public List<Parent> Parents;
+		//[JsonProperty(PropertyName = "parents")]
+		//public List<Parent> Parents;
 
-		[JsonProperty(PropertyName = "children")]
-		public List<Children> Children;
+		//[JsonProperty(PropertyName = "children")]
+		//public List<Children> Children;
 
 		[JsonProperty(PropertyName = "links")]
 		public LinkContainer LinkContainer;
@@ -113,20 +113,20 @@ namespace Colligo.REST.Response
 		[JsonProperty(PropertyName = "comments")]
 		public CommentContainer CommentContainer;
 
-		[JsonProperty(PropertyName = "trackbacks")]
-		public List<Trackback> Trackbacks;
+		//[JsonProperty(PropertyName = "trackbacks")]
+		//public List<Trackback> Trackbacks;
 
-		[JsonProperty(PropertyName = "images")]
-		public List<Image> Images;
+		//[JsonProperty(PropertyName = "images")]
+		//public List<Image> Images;
 
 		[JsonProperty(PropertyName = "tags")]
 		public TagContainer Tags;
 
-		[JsonProperty(PropertyName = "calendars")]
-		public List<Calendar> Calendars;
+		//[JsonProperty(PropertyName = "calendars")]
+		//public List<Calendar> Calendars;
 
-		[JsonProperty(PropertyName = "going")]
-		public List<Going> Going;
+		//[JsonProperty(PropertyName = "going")]
+		//public List<Going> Going;
 
 		[JsonProperty(PropertyName = "properties")]
 		public PropertyContainer PropertyContainer;

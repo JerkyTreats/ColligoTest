@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ColligoTest.Response
+namespace ColligoTest
 {
 	public static class GetResponseJsonData
 	{
@@ -58,7 +58,7 @@ namespace ColligoTest.Response
 			{ StartTime, "2005-08-24 12:00:00" },
 			{ StopTime, "2005-08-24 23:59:59" },
 			{ AllDay, 1 },
-			{ TzId, "TZ-001-TEST" },
+			{ TzId, 123456789 },
 			{ TzOlsenPath, "OLSEN PATH TEST" },
 			{ TzCity, "Fakesville" },
 			{ TzCountry, "Fakeland" },
@@ -78,7 +78,7 @@ namespace ColligoTest.Response
 			{ Modified, "2005-07-28 13:09:10" },
 			{ Owner, "Dr. Jackson Katabatak, PhD" },
 			{ Privacy, 1 },
-			{ Free, 1 },
+			{ Free, "1" },
 			{ Price, "19.99" },
 			{ Withdrawn, 1 },
 			{ WithdrawnNote, "Withdrawn due to testing requirements" }

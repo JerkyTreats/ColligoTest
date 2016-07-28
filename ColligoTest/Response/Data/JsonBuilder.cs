@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-namespace ColligoTest.Response
+namespace ColligoTest
 {
 	public class JsonBuilder
 	{
